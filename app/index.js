@@ -1,16 +1,6 @@
-/**
- * Application entry point
- */
-
 // Load application styles
 import 'styles/index.scss';
 import '@nasaworldwind/worldwind';
-
-// ================================
-// START YOUR APP HERE
-// ================================
-
-
 
 // Register an event listener to be called when the page is loaded.
 window.addEventListener("load", eventWindowLoaded, false);
