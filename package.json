@@ -1,0 +1,34 @@
+{
+  "name": "city-footprint-demo",
+  "version": "0.1",
+  "description": "Interactive tool based on WorldWind platform that measures city carbon footprint.",
+  "author": "City Footprint",
+  "license": "MIT",
+  "homepage": "https://github.com/CityFootprint/DemoApp",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=dev webpack-dev-server --progress --mode development --config webpack.config.dev.js",
+    "build": "webpack -p --progress --mode production --config webpack.config.build.js"
+  },
+  "dependencies": {
+    "@nasaworldwind/worldwind": "^0.9.0",
+    "lodash": "4.17.10"
+  },
+  "devDependencies": {
+    "babel-core": "6.26.3",
+    "babel-loader": "7.1.5",
+    "babel-preset-env": "1.7.0",
+    "clean-webpack-plugin": "0.1.19",
+    "cross-env": "5.2.0",
+    "css-loader": "1.0.0",
+    "file-loader": "1.1.11",
+    "html-webpack-plugin": "3.2.0",
+    "node-sass": "4.9.2",
+    "sass-loader": "7.0.3",
+    "style-loader": "0.21.0",
+    "url-loader": "1.0.1",
+    "webpack": "4.15.1",
+    "webpack-cli": "3.0.8",
+    "webpack-dev-server": "3.1.4",
+    "webpack-merge": "4.1.3"
+  }
+}
