@@ -31,4 +31,4 @@ yarn run build
 ```
 
 
-Base on [csgellhorn](https://github.com/cvgellhorn/webpack-boilerplate) boilerplate
+Based on [csgellhorn](https://github.com/cvgellhorn/webpack-boilerplate) boilerplate
