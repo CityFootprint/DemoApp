@@ -1,14 +1,22 @@
-## System and generated files
-.idea
-.DS_Store
-.sass-cache
+syntax: glob
 
-## Directories
-log/
-dist/
-node_modules/
-bower_components/
+# system
+.DS_store
+*.pyc
+*.db
 
-## Files
-result.xml
+# node
+node_modules
 npm-debug.log
+
+# sass
+.sass-cache
+src/css
+
+# sprite
+src/img/common/sprite.png
+
+# webpack
+src/js/build/*/*.js
+src/js/build/*/*.js.map
+src/js/stats/*.json

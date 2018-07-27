@@ -1,0 +1,149 @@
+/*
+    # Mixins
+
+    `core/_mixins.scss`
+*/
+
+
+/*
+    ## Layout
+*/
+
+@mixin background-image($path-image, $options) {
+    background: url('#{$path-image-directories}#{$path-image}') #{$options};
+}
+
+@mixin background-icon($path-image, $options, $width-icon, $height-icon) {
+    background: url('#{$path-image-directories}#{$path-image}') #{$options};
+    width: #{$width-icon}px;
+    height: #{$height-icon}px;
+}
+
+/*
+    ## Fonts
+*/
+
+@mixin font($font-name, $font-weight) {
+    @extend %#{$font-name}-#{$font-weight};
+}
+
+@mixin make-font($font-name, $font-family-name, $font-weight, $add-weight: true) {
+    %#{$font-name}-#{$font-weight}{
+        font-family: $font-family-name;
+        @if $add-weight == true {
+            font-weight: $font-weight;
+        }
+    }
+}
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+    $src: null;
+
+    $extmods: (
+        eot: "?",
+        svg: "#" + str-replace($name, " ", "_")
+    );
+
+    $formats: (
+        otf: "opentype",
+        ttf: "truetype"
+    );
+
+    @each $ext in $exts {
+        $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+        $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+        $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+    }
+
+    @font-face {
+        font-family: quote($name);
+        font-style: $style;
+        font-weight: $weight;
+        src: $src;
+    }
+}
+
+/*
+    ## Forms
+*/
+
+@mixin form-input-placeholder() {
+    input[type="text"].placeholder,
+    input[type="password"].placeholder,
+    input[type="email"].placeholder,
+    input[type="number"].placeholder,
+    textarea.placeholder,
+    .placeholder{
+        @content;
+    }
+
+    ::-webkit-input-placeholder {
+        @content;
+    }
+
+    ::-moz-placeholder  {
+        @content;
+    }
+
+    :-ms-input-placeholder  {
+        @content;
+    }
+
+    input:-moz-placeholder  {
+        @content;
+    }
+
+    textarea:-moz-placeholder  {
+        @content;
+    }
+}
+
+/*
+    ## Breakpoints
+*/
+
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == "container" {
+        @media (max-width: $container) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == "small" {
+        @media (max-width: $container-small) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == "medium" {
+        @media (max-width: $container-medium) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == "large" {
+        @media (max-width: $container-large) {
+            @content;
+        }
+    }
+}
+
+/*
+    ## Margin / Padding
+*/
+
+@mixin generate_padding_margins() {
+    @each $rule in padding, margin{
+        $rule-prefix: str-slice($rule, 0, 1);
+        @each $direction in "", -top, -right, -bottom, -left{
+            $direction-prefix: str-slice($direction, 0, 2);
+            @each $size-name, $size in $padding-margin-sizes{
+                $class-name: $rule-prefix + $direction-prefix + $size-name;
+                $rule-name: $rule + $direction;
+                    .#{$class-name}{
+                    #{$rule-name}: $size;
+                }
+            }
+        }
+    }
+}

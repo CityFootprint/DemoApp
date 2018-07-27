@@ -11,7 +11,9 @@
 Dependencies
 
 ```sh
-yarn
+npm install
+# or
+yarn install
 ```
 
 ## Development
@@ -19,16 +21,25 @@ yarn
 Run the local webpack-dev-server with livereload and autocompile on [http://localhost:8080/](http://localhost:8080/)
 
 ```sh
-yarn run dev
+npm run watch:all
 ```
+
+Options: `all`, `css`, `sprite`, `js`
+
 
 ## Deployment
 
 Build the current application
 
 ```sh
-yarn run build
+npm build watch:all
 ```
 
+### ESLint
 
-Based on [csgellhorn](https://github.com/cvgellhorn/webpack-boilerplate) boilerplate
+Identifying and reporting in ECMAScript/JavaScript code
+
+```sh
+npm run lint
+```
+

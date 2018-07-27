@@ -1,0 +1,41 @@
+/*
+    # Utils
+
+    `core/_utils.scss`
+*/
+
+/*
+    ## Default
+*/
+
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+@include generate_padding_margins();
+
+/*
+    ## Layout
+*/
+
+.inline-block {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/*
+    ## Fonts
+*/
+
+.semi-bold {
+    @include font($font-1, 600);
+}
+
+.bold {
+    @include font($font-1, 700);
+}
+
+.text-small {
+    font-size: $font-size-small;
+}

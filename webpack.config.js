@@ -1,98 +1,71 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+var webpack = require("webpack");
+var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
+var path = require("path");
 
-// Is the current build a development build
-const IS_DEV = (process.env.NODE_ENV === 'dev');
+var basePath =  __dirname + "/";
+var staticPath = basePath + "src/";
+var nodeModulesDir = path.join(basePath, "node_modules");
 
-const dirNode = 'node_modules';
-const dirApp = path.join(__dirname, 'app');
-const dirAssets = path.join(__dirname, 'assets');
+var config = {
+    context: staticPath,
+    
+    profile: true,
 
-const appHtmlTitle = 'Carbon Footprint App';
-
-/**
- * Webpack Configuration
- */
-module.exports = {
     entry: {
-        vendor: [
-            'lodash'
-        ],
-        bundle: path.join(dirApp, 'index')
+        common: "app/common",
+        home: "app/home"
     },
+
+    output: {
+        path: staticPath + "js/build/development",
+        publicPath: "/src/js/build/development/",
+        filename: "[name].js",
+        chunkFilename: "[id].js"
+    },
+
+    plugins: [
+        new CommonsChunkPlugin({
+            name: "commons",
+            filename: "commons.js",
+            minChunks: 2,
+            chunks: [
+                "common",
+                "home"
+            ]
+        }),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery"
+        }),
+        new webpack.optimize.OccurrenceOrderPlugin()
+    ],
+
     resolve: {
+        extensions: [".js"],
         modules: [
-            dirNode,
-            dirApp,
-            dirAssets
+            "./node_modules",
+            staticPath + "js/",
+            staticPath + "js/libs",
+            staticPath + "js/app"
+        ]
+    },    
+
+    resolveLoader: {
+        modules: [
+            nodeModulesDir
         ]
     },
-    plugins: [
-        new webpack.DefinePlugin({
-            IS_DEV: IS_DEV
-        }),
 
-        new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'index.ejs'),
-            title: appHtmlTitle
-        })
-    ],
     module: {
-        rules: [
-            // BABEL
+        loaders: [
             {
                 test: /\.js$/,
-                loader: 'babel-loader',
-                exclude: /(node_modules)/,
-                options: {
-                    compact: true
-                }
-            },
-
-            // STYLES
-            {
-                test: /\.css$/,
-                use: [
-                    'style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            sourceMap: IS_DEV
-                        }
-                    },
-                ]
-            },
-
-            // CSS / SASS
-            {
-                test: /\.scss/,
-                use: [
-                    'style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            sourceMap: IS_DEV
-                        }
-                    },
-                    {
-                        loader: 'sass-loader',
-                        options: {
-                            sourceMap: IS_DEV,
-                            includePaths: [dirAssets]
-                        }
-                    }
-                ]
-            },
-
-            // IMAGES
-            {
-                test: /\.(jpe?g|png|gif)$/,
-                loader: 'file-loader',
-                options: {
-                    name: '[path][name].[ext]'
-                }
+                loader: "babel-loader",
+                exclude: /(node_modules)/
             }
         ]
     }
 };
+
+module.exports = config;

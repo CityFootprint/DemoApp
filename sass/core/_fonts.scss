@@ -1,0 +1,11 @@
+@import "mixins";
+
+/*
+    # Fonts
+
+    `core/_fonts.scss`
+*/
+
+@include make-font($font-1, "font_name", 400);
+@include make-font($font-1, "font_name", 600);
+@include make-font($font-1, "font_name", 700);
