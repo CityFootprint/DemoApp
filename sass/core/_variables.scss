@@ -1,14 +1,21 @@
 /*
-    # Variables
-
-    `core/_variables.scss`
-*/
-
-/*
     ## Default
 */
 
-$path-image-directories: '/src/img/';
+$img-dir: '/src/img/';
+
+
+/*
+    ## Colors
+*/
+
+$color-primary: #8BC34A;
+$color-secondary: #FEC96B;
+
+$color-gray: #BEBDBD;
+$color-black: #000;
+$color-white: #FFF;
+
 
 /*
     ## Layout

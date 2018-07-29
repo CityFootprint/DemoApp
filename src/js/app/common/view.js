@@ -2,7 +2,7 @@ import log from "core/logger";
 
 export default class {
     constructor() {
-        var wwd = new WorldWind.WorldWindow("canvasOne");
+        var wwd = new WorldWind.WorldWindow("canvasMap");
     
         WorldWind.Logger.setLoggingLevel(WorldWind.Logger.LEVEL_WARNING);
     

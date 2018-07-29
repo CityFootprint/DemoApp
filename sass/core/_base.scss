@@ -2,3 +2,21 @@
 @import "core/colors";
 @import "core/mixins";
 @import "core/fonts";
+
+
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+
+html, body {
+    height: 100%;
+    font-family: 'Raleway', sans-serif;
+}
+
+.container-map {
+    height: 100%;
+}
+
+.col {
+    padding-left: 0;
+    padding-right: 0;
+}
