@@ -32,7 +32,7 @@ Options: `all`, `css`, `sprite`, `js`
 Build the current application
 
 ```sh
-npm build watch:all
+npm run build:all
 ```
 
 ### ESLint

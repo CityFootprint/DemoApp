@@ -10,14 +10,12 @@
     "sass": "node-sass --include-path sass/ --output-style compressed -o src/css sass",
     "serve": "browser-sync --port 8000 start --server --files \"src/css/*.css, **/*.html, !node_modules/**/*.html\"",
     "lint": "eslint src/js/app",
-    "watch:sprite": "onchange \"src/img/sprites/\" -- npm run build:sprite",
     "watch:css": "node-sass --watch --include-path sass/ --output-style expanded -o src/css sass",
     "watch:js": "webpack --watch --config ./webpack.config.dev.js",
     "watch:all": "npm-run-all -p serve watch:css watch:js watch:sprite",
-    "build:sprite": "./node_modules/sprity-cli/index.js create 'src/img/common/' 'src/img/sprites/*.png' -s '../../css/sprite.css' -c '/src/img/common/'",
     "build:css": "npm run sass && npm run autoprefixer",
     "build:js": "webpack --config ./webpack.config.prod.js",
-    "build:all": "npm run build:css && npm run build:sprite && npm run build:js"
+    "build:all": "npm run build:css && npm run build:js"
   },
   "dependencies": {
     "@nasaworldwind/worldwind": "^0.9.0",
@@ -44,8 +42,6 @@
     "object-assign": "^4.1.1",
     "onchange": "^3.1.1",
     "postcss-cli": "^2.6.0",
-    "sprity": "^1.0.8",
-    "sprity-cli": "^1.0.1",
     "stats-webpack-plugin": "^0.4.3",
     "webpack": "^2.2.1",
     "webpack-bundle-tracker": "0.2.0",
