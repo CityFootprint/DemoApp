@@ -11,13 +11,34 @@
         border-right: 5px solid $color-primary;
         padding: 20px 30px;
 
-        .title {
-            font-size: $font-size-large;
+        h1 {
+            font-size: $font-size-big;
+            font-weight: 700;
             color: $color-primary;
             padding-bottom: 8px;
         }
+
+        p {
+            font-weight: 400;
+        }
+
+        .title {
+            height: 5%;
+        }
+
+        .categories {
+            height: 80%;
+        }
+
+        .logo {
+            height: 10%;
+            background-image: url($img-dir + 'logo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
     }
-    
+
     .map {
         canvas#canvasMap {
             width: 100%;
@@ -27,6 +48,6 @@
             background-size: cover;
             background-repeat: repeat;
         }
-    
+
     }
 }
