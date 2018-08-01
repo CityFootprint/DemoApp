@@ -523,29 +523,109 @@ function getCities() {
             "latitude": 10.506098,
             "longitude": -66.9146017,
             "level": 47
+        },
+        {
+            "name": "Caracas",
+            "latitude": 10.506098,
+            "longitude": -66.9146017,
+            "level": 47
+        },
+        {
+            "name": "Kampala",
+            "latitude": 0.347596,
+            "longitude": 32.582520,
+            "level": 170
+        },
+        {
+            "name": "Riyadh",
+            "latitude": 24.774265,
+            "longitude": 46.738586,
+            "level": 368
+        },
+        {
+            "name": "Doha",
+            "latitude": 25.286106,
+            "longitude": 51.534817,
+            "level": 168
+        },
+        {
+            "name": "Onitsha",
+            "latitude": 6.141312,
+            "longitude": 6.802949,
+            "level": 594
+        },
+        {
+            "name": "Morogoro",
+            "latitude": -6.830373,
+            "longitude": 37.670589,
+            "level": 35
+        },
+        {
+            "name": "Nairobi",
+            "latitude": -1.362863,
+            "longitude": 36.83458,
+            "level": 33
+        },
+        {
+            "name": "Dakar",
+            "latitude": 14.716677,
+            "longitude": -17.467686,
+            "level": 141
         }
     ]
 }
 
 function showPollution(wwd, city) {
-    let scale = 50000;
-    let scaleSeed = 2500;
+    //let scale = 50000; 
+    // 2500
+    let scaleSeed = 1000;
 
-    let cityLayer = new WorldWind.RenderableLayer(city.name);
+    let cityLayer = new WorldWind.RenderableLayer(city.name + "Pollution");
     wwd.addLayer(cityLayer);
 
     let position = new WorldWind.Position(city.latitude, city.longitude, 0);
+
+    // Add columns
     let colladaLoader = new WorldWind.ColladaLoader(position);
     colladaLoader.init({
         dirPath: '/src/img/collada/'
     });
 
-    //debugger;
-    colladaLoader.load('col.dae', function (scene) {
+    let col = "col";
+    if (city.level > 0) {
+        col = "green";
+    }
+    if (city.level > 50) {
+        col = "yellow";
+    }
+    if (city.level > 100) {
+        col = "orange";
+    }
+    if (city.level > 250) {
+        col = "red";
+    }
+    if (city.level > 200) {
+        col = "purple";
+    }
+    if (city.level > 300) {
+        col = "maroon";
+    }
+
+    colladaLoader.load(col + '.dae', function (scene) {
         scene.scale = city.level * scaleSeed;
-        cityLayer.addRenderable(scene);
+        cityLayer.addRenderable(scene); 
     });
 
+    // Add Names
+    let textAttributes = new WorldWind.TextAttributes(null);
+    let textLayer = new WorldWind.RenderableLayer(city.name + "Text");
+    textAttributes.color = WorldWind.Color.WHITE;
+    textAttributes.depthTest = false;
+
+    let text = new WorldWind.GeographicText(position, city.name + "\n" + city.level + " µg/m³");
+    text.attributes = textAttributes;
+    textLayer.addRenderable(text);
+    wwd.addLayer(textLayer);
 }
 
 export {
