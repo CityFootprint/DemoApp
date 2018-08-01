@@ -1,7 +1,7 @@
 # City Footprint
 
 <p align="center">
-  <img width="400" height="400" src="https://pbs.twimg.com/profile_images/1014148488102375424/snwu7ufF_400x400.jpg">
+  <img width="400" src="http://cityfootprint.info/wp-content/uploads/2018/07/cityfootprint-logo-green.png">
 </p>
 
 
