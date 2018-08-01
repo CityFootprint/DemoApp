@@ -1,9 +1,18 @@
 import log from "core/logger";
 import '@nasaworldwind/worldwind';
+import { getCities, showPollution } from "./pollution";
 
 export default class {
     constructor() {
         var wwd = new WorldWind.WorldWindow("canvasMap");
+        var finland = {
+            location: {
+                latitude: 61.9241,
+                longitud: 25.7482
+            },
+            range: 2500000
+        };
+
         WorldWind.Logger.setLoggingLevel(WorldWind.Logger.LEVEL_WARNING);
 
         // BMNGLayer Blue Marbe layer: aka The Globe
@@ -70,10 +79,17 @@ export default class {
             wwd.addLayer(layers[l].layer);
         }
 
+        var cities = getCities();
+        
+        cities.map( city => {
+            showPollution(wwd, city);
+        });
+
         // Finland position
-        wwd.navigator.lookAtLocation.latitude = 61.9241;
-        wwd.navigator.lookAtLocation.longitude = 25.7482;
-        wwd.navigator.range = 2500000;
+        wwd.navigator.lookAtLocation.latitude = finland.location.latitude
+        wwd.navigator.lookAtLocation.longitude = finland.location.longitud
+        wwd.navigator.range = finland.range;
+
         wwd.redraw();
     }
 }
