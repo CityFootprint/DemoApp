@@ -16,8 +16,11 @@
             color: $color-primary;
             padding-bottom: 8px;
         }
+      .row {
+        display:inline-flex;
+      }
     }
-    
+
     .map {
         canvas#canvasMap {
             width: 100%;
@@ -27,6 +30,29 @@
             background-size: cover;
             background-repeat: repeat;
         }
-    
+
     }
+}
+
+.sidebar-footer { float: center; margin-top:55px;}
+.sidebar-footer span { margin-top: -20px;}
+
+.button-options {
+  font-size: $font-size-large;
+  color: $color-primary;
+  padding-bottom: 8px;
+  padding-top: 20px,
+}
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: flex-block;
+  font-size: 14px;
+  margin: 14px 12px;
+  border-radius: 10%;
 }
