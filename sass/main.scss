@@ -26,9 +26,42 @@
             height: 5%;
         }
 
-        .categories {
-            height: 75%;
+        .info {
+            height: 72%;
             padding-top: 20px;
+
+            .bars {
+                width: 100%;
+            }
+
+            .color {
+                padding-left: 2px;
+                text-align: center;
+                font-weight: 600;
+
+                &.green {
+                    color: green;
+                }
+                &.yellow {
+                    color: yellow;
+                }
+                &.orange {
+                    color: orange;
+                }
+                &.red {
+                    color: red;
+                }
+                &.purple {
+                    color: purple;
+                }
+                &.maroon {
+                    color: maroon;
+                }
+            }
+            
+            .description {
+                padding-right: 0;
+            }
         }
 
         .option {
@@ -56,12 +89,18 @@
             }
           }
 
-        .logo {
-            height: 10%;
-            background-image: url($img-dir + 'logo-green.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center center;
+        .footer {
+            height: 200px;
+            text-align: center;
+            
+            img.logo {
+                width: 100%;
+                padding-top: 20px;
+            }
+            // background-image: url($img-dir + 'logo-green.png');
+            // background-size: contain;
+            // background-repeat: no-repeat;
+            // background-position: center center;
         }
 
         .sidebar-footer {

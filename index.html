@@ -7,13 +7,14 @@
     <meta name="description" content="">
     <meta name=viewport content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 
     <!-- [libs css] -->
     <link rel="stylesheet" type="text/css" href="src/css/sprite.css">
-    <link rel="icon" href="http://cityfootprint.info/wp-content/uploads/2018/08/cityscape.png"
-        sizes="32x32" />
+    <link rel="icon" href="http://cityfootprint.info/wp-content/uploads/2018/08/cityscape.png" sizes="32x32" />
 
     <!-- [views css] -->
     <link rel="stylesheet" type="text/css" href="src/css/main.css">
@@ -30,32 +31,54 @@
                     <p class="col-12">How high is carbon footprint of your city?</p>
                 </div>
 
-                <div class="row categories">
-                    <!-- <h1 class='col-12'>Options</h1> -->
+                <div class="row info">
+                    <div class="col-12">
+                        <img class="bars" src='/src/img/color-bars.png' />
+                    </div>
 
-                    <!-- <div class="col-6">
-                        <div class="option pollution">Pollution</div>
-                    </div> -->
-                    <!-- <div class="col-6">
-                        <div class="option transport inactive">Transport</div>
-                    </div> -->
-                    <!-- <div class="col-6">
-                        <div class="option inactive">Energy</div>
-                    </div> -->
-                    <!-- <div class="col-6">
-                        <div class="option inactive">Recycling</div>
-                    </div> -->
+                    <div class="color green col-2">Green</div>
+                    <div class="description col-10">Air quality is considered satisfactory, and air pollution poses little or no risk.</div>
+
+                    <div class="color yellow col-2">Yellow</div>
+                    <div class="description col-9">Air quality is acceptable; however may be a moderate health concern for a very small number of people
+                        who are unusually sensitive to air pollution.</div>
+
+                    <div class="color orange col-2">Orange</div>
+                    <div class="description col-10">Members of sensitive groups may experience health effects. The general public is not likely to be affected.
+                        </div>
+
+                    <div class="color red col-2">Red</div>
+                    <div class="description col-10">Everyone may begin to experience health effects; members of sensitive groups may experience more serious
+                        health effects.</div>
+
+                    <div class="color purple col-2">Purple</div>
+                    <div class="description col-10">Health alert: everyone may experience more serious health effects.</div>
+
+                    <div class="color maroon col-2">Maroon</div>
+                    <div class="description col-10">Health warnings of emergency conditions. The entire population is more likely to be affected.</div>
                 </div>
 
-                <a href="http://cityfootprint.info" target="_blank">
-                    <div class="row logo"></div>
+                <div class="row footer">
+                    <div class="col-12">
+                        <a class="logo-footer" href="http://cityfootprint.info" target="_blank">
+                            <img class="logo" src="/src/img/logo-green.png" alt="">
                 </a>
+                    </div>
 
+                    <div class="col-12">
                 <div class="sidebar-footer">
                     <span>Connect with us:</span>
-                    <a href="https://www.facebook.com/pg/cityfootprint" target="_blank"><img src='/src/img/facebook.png'/></a>
-                    <a href="https://twitter.com/CityFootprint/" target="_blank"><img src='/src/img/twitter.jpg'/></a>
+                            <a href="https://www.facebook.com/pg/cityfootprint" target="_blank">
+                                <img src='/src/img/facebook.png' />
+                            </a>
+                            <a href="https://twitter.com/CityFootprint/" target="_blank">
+                                <img src='/src/img/twitter.jpg' />
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
+
 
             </div>
             <div class="map col col-sm-9" id="globe">
