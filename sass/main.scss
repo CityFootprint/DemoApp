@@ -50,6 +50,10 @@
             &.inactive {
                 background-color: $color-gray;
             }
+
+            &.enable {
+                border: 3px solid $color-enable;
+            }
           }
 
         .logo {

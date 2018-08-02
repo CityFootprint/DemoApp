@@ -8,6 +8,11 @@ class App {
         $(() => {
             this.view = new View();
         });
+
+        $(".pollution").on( "click", (ev) => {
+            $(".pollution").toggleClass("enable");
+            this.view.togglePollution();
+        });
     }
 };
 

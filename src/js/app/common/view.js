@@ -1,6 +1,7 @@
 import log from "core/logger";
 import '@nasaworldwind/worldwind';
-import { getCities, showPollution } from "./pollution";
+
+import { PollutionLayers } from "./pollution/pollutionLayers";
 
 export default class {
     constructor() {
@@ -12,6 +13,10 @@ export default class {
             },
             range: 2500000
         };
+
+
+        this.polLayer = new PollutionLayers(wwd);
+        this.polLayer.createLayers();
 
         WorldWind.Logger.setLoggingLevel(WorldWind.Logger.LEVEL_WARNING);
 
@@ -79,17 +84,19 @@ export default class {
             wwd.addLayer(layers[l].layer);
         }
 
-        var cities = getCities();
-        
-        cities.map( city => {
-            showPollution(wwd, city);
-        });
-
         // Finland position
         wwd.navigator.lookAtLocation.latitude = finland.location.latitude
         wwd.navigator.lookAtLocation.longitude = finland.location.longitud
         wwd.navigator.range = finland.range;
 
         wwd.redraw();
+    }
+
+    togglePollution() {
+        if (this.polLayer.isEnabled === true) {
+            this.polLayer.hide();
+        } else {
+            this.polLayer.show();
+        }
     }
 }
