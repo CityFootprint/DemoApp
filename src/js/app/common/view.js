@@ -17,6 +17,7 @@ export default class {
 
         this.polLayer = new PollutionLayers(wwd);
         this.polLayer.createLayers();
+        this.polLayer.show();
 
         WorldWind.Logger.setLoggingLevel(WorldWind.Logger.LEVEL_WARNING);
 
