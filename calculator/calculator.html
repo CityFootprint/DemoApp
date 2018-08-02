@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+
+<form class="container">
+
+  <div class="row">
+    <div class="input-field col s12">
+      <select id="footprint-v1">
+        <option value="" disabled selected>What is the size of your home?</option>
+        <option value="10">Large house</option>
+        <option value="7">Medium house</option>
+        <option value="4">Small house</option>
+        <option value="2">Apartment</option>
+      </select>
+      <label>Home size</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <select id="footprint-v2">
+        <option value="" disabled selected>How many people live in your household?</option>
+        <option value="14">I live alone</option>
+        <option value="12">2 people</option>
+        <option value="10">3 people</option>
+        <option value="8">4 people</option>
+        <option value="6">5 people</option>
+        <option value="4">6 people</option>
+        <option value="2">more than 6 people</option>
+      </select>
+      <label>Household members</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <select id="footprint-v3">
+        <option value="" disabled selected>What kind of food do you eat?</option>
+        <option value="10">I eat meat daily</option>
+        <option value="8">I eat meat few times a week</option>
+        <option value="4">I'm vegeterian</option>
+        <option value="2">I'm vegan</option>
+      </select>
+      <label>Food choice</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <select id="footprint-v4">
+        <option value="" disabled selected>How many times per week you use washing machine or diswasher?</option>
+        <option value="3">More than 9 times per week</option>
+        <option value="2">4 to 9 times a week</option>
+        <option value="1">1 to 3 times a week</option>
+      </select>
+      <label>Water consumption</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <select id="footprint-v5">
+        <option value="" disabled selected>How many household purchases you make each year?</option>
+        <option value="10">Over 7 items</option>
+        <option value="8">5 to 7 items</option>
+        <option value="6">3 to 5 items</option>
+        <option value="4">Less than 3 items</option>
+        <option value="2">None</option>
+      </select>
+      <label>Household purchases</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <select id="footprint-v6">
+        <option value="" disabled selected>How many trash cans you fill each week?</option>
+        <option value="50">4 or more per week</option>
+        <option value="40">3 per week</option>
+        <option value="30">2 per week</option>
+        <option value="20">1 per week</option>
+        <option value="5">Half per week</option>
+      </select>
+      <label>Waste production</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <select id="footprint-v7">
+        <option value="" disabled selected>How much waste you recycle (glass, plastic, paper, aluminium, steel, food waste)?</option>
+        <option value="0">All 6 of them</option>
+        <option value="4">5 of them</option>
+        <option value="8">4 of them</option>
+        <option value="12">3 of them</option>
+        <option value="16">2 of them</option>
+        <option value="20">Only 1 of them</option>
+        <option value="24">None</option>
+      </select>
+      <label>Recycle</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <select id="footprint-v8">
+        <option value="" disabled selected>How much do you travel with personal car per year?</option>
+        <option value="12">More than 25000 km</option>
+        <option value="10">15000 to 25000 km</option>
+        <option value="6">1500 to 15000 km</option>
+        <option value="4">Less than 1500 km</option>
+        <option value="0">I don't have a car</option>
+      </select>
+      <label>Transportation</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <select id="footprint-v9">
+        <option value="" disabled selected>How much do you travel with public transportation per year?</option>
+        <option value="12">More than 30000 km</option>
+        <option value="10">25000 to 30000 km</option>
+        <option value="6">15000 to 25000 km</option>
+        <option value="4">1500 to 15000 km</option>
+        <option value="2">Less than 1500 km</option>
+        <option value="0">I don't use public transportation</option>
+      </select>
+      <label>Public transportation</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <select id="footprint-v10">
+        <option value="" disabled selected>How far you travel with planes?</option>
+        <option value="20">Other continents</option>
+        <option value="6">Nearby states</option>
+        <option value="2">Only short travels</option>
+        <option value="0">I don't use planes</option>
+      </select>
+      <label>Flights</label>
+    </div>
+  </div>
+
+</form>
+
+  <center>
+  <div id="gg1" style="width: 300px; height: 225px;"></div>
+  </center>
+
+  <script src="js/raphael-2.1.4.min.js"></script>
+  <script src="js/justgage.js"></script>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/materialize.min.js"></script>
+  <script>
+    $( document ).ready( function(){
+      // initialize select
+      $( 'select' ).formSelect();
+
+      $( '#footprint-v1' ).on( 'change', function(){
+        calculateFootprint()
+      } );
+      $( '#footprint-v2' ).on( 'change', function(){
+        calculateFootprint()
+      } );
+      $( '#footprint-v3' ).on( 'change', function(){
+        calculateFootprint()
+      } );
+      $( '#footprint-v4' ).on( 'change', function(){
+        calculateFootprint()
+      } );
+      $( '#footprint-v5' ).on( 'change', function(){
+        calculateFootprint()
+      } );
+      $( '#footprint-v6' ).on( 'change', function(){
+        calculateFootprint()
+      } );
+      $( '#footprint-v7' ).on( 'change', function(){
+        calculateFootprint()
+      } );
+      $( '#footprint-v8' ).on( 'change', function(){
+        calculateFootprint()
+      } );
+      $( '#footprint-v9' ).on( 'change', function(){
+        calculateFootprint()
+      } );
+      $( '#footprint-v10' ).on( 'change', function(){
+        calculateFootprint()
+      } );
+    });
+
+    function calculateFootprint() {
+      if( $( '#footprint-v1' ).val() != null &&
+          $( '#footprint-v2' ).val() != null &&
+          $( '#footprint-v3' ).val() != null &&
+          $( '#footprint-v4' ).val() != null &&
+          $( '#footprint-v5' ).val() != null &&
+          $( '#footprint-v6' ).val() != null &&
+          $( '#footprint-v7' ).val() != null &&
+          $( '#footprint-v8' ).val() != null &&
+          $( '#footprint-v9' ).val() != null &&
+          $( '#footprint-v10' ).val() != null) {
+
+        $( '#gg1' ).html( '' );
+
+        var footprintTotal = parseInt($( '#footprint-v1' ).val()) +
+                             parseInt($( '#footprint-v2' ).val()) +
+                             parseInt($( '#footprint-v3' ).val()) +
+                             parseInt($( '#footprint-v4' ).val()) +
+                             parseInt($( '#footprint-v5' ).val()) +
+                             parseInt($( '#footprint-v6' ).val()) +
+                             parseInt($( '#footprint-v7' ).val()) +
+                             parseInt($( '#footprint-v8' ).val()) +
+                             parseInt($( '#footprint-v9' ).val()) +
+                             parseInt($( '#footprint-v10' ).val());
+
+        var gg1 = new JustGage({
+            id: "gg1",
+            value: footprintTotal,
+            min: 0,
+            max: 165,
+            title: "",
+            label: "",
+            textRenderer: customValue
+        });
+
+        function customValue(val) {
+            if (val < 60) {
+                return 'low';
+            } else if (val >= 60 ) {
+                return 'high';
+            }
+        }
+
+      }
+    }
+  </script>
+</body>
+</html>
