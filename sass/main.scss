@@ -31,6 +31,27 @@
             padding-top: 20px;
         }
 
+        .option {
+            height: $option-size;
+            line-height: $option-size;
+            width: $option-size;
+            color: white;
+            text-align: center;
+            background-color: $color-primary;
+            border-radius: 50%;
+            font-size: $font-size-large;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $color-secondary;
+                font-weight: 600;
+            }
+
+            &.inactive {
+                background-color: $color-gray;
+            }
+          }
+
         .logo {
             height: 10%;
             background-image: url($img-dir + 'logo-green.png');
@@ -42,6 +63,7 @@
         .sidebar-footer {
             height: 5%;
             text-align: center;
+            float: center;
         }
     }
 
@@ -56,28 +78,4 @@
         }
 
     }
-}
-
-.sidebar-footer { float: center; margin-top:55px;}
-.sidebar-footer span { margin-top: -20px;}
-
-.button-options {
-  font-size: $font-size-large;
-  color: $color-primary;
-  padding-bottom: 8px;
-  padding-top: 20px;
-  width: 100%;
-}
-
-.option {
-  height: 160px;
-  line-height: 160px;
-  color: white;
-  text-align: center;
-  background-color: $color-primary;
-  width: 160px;
-  margin: 10px 20px;
-  border-radius: 50%;
-  font-size: $font-size-big;
-  cursor: pointer;
 }
