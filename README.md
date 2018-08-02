@@ -43,3 +43,6 @@ Identifying and reporting in ECMAScript/JavaScript code
 npm run lint
 ```
 
+### Demo
+![screenshot](https://i.imgur.com/o6g3x3k.jpg)
+
