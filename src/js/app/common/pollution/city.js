@@ -93,10 +93,12 @@ export class City {
     show() {
         this.textLayer.enabled = true;
         this.layer.enabled = true;
+        this.layer.refresh();
     }
 
     hide() {
         this.textLayer.enabled = false;
         this.layer.enabled = false;
+        this.layer.refresh();
     }
 }
