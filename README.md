@@ -44,5 +44,5 @@ npm run lint
 ```
 
 ### Demo
-![screenshot](https://i.imgur.com/o6g3x3k.jpg)
+![screenshot](https://i.imgur.com/d8xK0sv.jpg)
 
