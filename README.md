@@ -27,7 +27,7 @@ Project is active on [Facebook](https://www.facebook.com/pg/cityfootprint) and [
 
 ### Setup project
 
-Follow [the following](Readme.md) instructions to setup your local environment.
+Follow the following instructions to setup your local environment.
 
 #### Installation
 
