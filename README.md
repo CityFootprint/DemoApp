@@ -1,48 +1,31 @@
-# City Footprint
-
 <p align="center">
   <img width="400" src="http://cityfootprint.info/wp-content/uploads/2018/07/cityfootprint-logo-green.png">
 </p>
 
 
+# City Footprint platform
 
-## Installation
+City Footprint platform aims to educate people and increase awareness about carbon footprint.
 
-Dependencies
+Our [website](http://cityfootprint.info/) is based on Wordpress and it consist of following sections:
 
-```sh
-npm install
-# or
-yarn install
-```
+- Home
+- Mission
+- Blog
 
-## Development
+Website also have links to carbon footprint application and demo application powered by WorldWind, open source API for virtual globe. Our demo application shows air pollution for different cities using Finish Meteorological Institute data. With carbon footprint calculator, by answering a few simple questions, it is possible to see how high is your carbon footprint.
 
-Run the local webpack-dev-server with livereload and autocompile on [http://localhost:8080/](http://localhost:8080/)
+Project is active on [Facebook](https://www.facebook.com/pg/cityfootprint) and [Twitter](https://twitter.com/CityFootprint) social media channels.
 
-```sh
-npm run watch:all
-```
+![reference](https://i.imgur.com/DNqe0oM.png)
 
-Options: `all`, `css`, `sprite`, `js`
-
-
-## Deployment
-
-Build the current application
-
-```sh
-npm run build:all
-```
-
-### ESLint
-
-Identifying and reporting in ECMAScript/JavaScript code
-
-```sh
-npm run lint
-```
 
 ### Demo
+
 ![screenshot](https://i.imgur.com/d8xK0sv.jpg)
+
+
+### Setup project
+
+Follow [the following](Readme.md) instructions to setup your local environment.
 
